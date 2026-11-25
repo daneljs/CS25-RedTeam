@@ -9,6 +9,6 @@ Detta repo är en del av kursen Incidenthantering på utbildningen IT- och cyber
 
 En simulerad ransomwareattack. Vad har hänt, vilka filer har påverkats och vilka spår hittar du i Wazuh?
 
-Lycka till med jakten! 😎
+Lycka till med jakten! 
 
 **OBS:** Scripten är framtagna för utbildningsändamål och ska endast köras i en kontrollerad labbmiljö.
