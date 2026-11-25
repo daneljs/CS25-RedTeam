@@ -1,4 +1,3 @@
-# CS25-RedTeam
 # CS25 – Red Team
 
 Lite kaos, många larm och en hel del detektivarbete!
