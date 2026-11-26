@@ -1,6 +1,6 @@
 
 #!/usr/bin/env bash
-# Operation Lockdown V1.1 – ofarlig simulering för Wazuh FIM.
+# Operation Lockdown V1.2 – ofarlig simulering för Wazuh FIM.
 # Körs endast i labbmiljö. Inga befintliga dokument påverkas.
 
 # Avbryt vid fel och begränsa åtkomsten till testfilerna.
@@ -36,3 +36,19 @@ printf 'OPERATION LOCKDOWN\nFictional ransom note for incident response training
 printf '\n\033[31m=== OPERATION LOCKDOWN ===\033[0m\n'
 printf 'Simulated ransomware incident. No real encryption or locking.\n'
 printf 'Investigate FIM events in Wazuh. Test files remain in: %s\n' "$lab"
+
+# Invänta användaren innan testfilerna tas bort.
+printf '\n'
+read -r -p 'Press Enter to clean up the lab: ' unused
+
+# Ta endast bort de testfiler som scriptet har skapat.
+rm -f -- "$lab/Employees.csv" "$lab/Budget_2027.txt" \
+    "$lab/Financial_report.txt" "$lab/Meeting_notes.txt" \
+    "$lab/Inventory.txt" "$lab/Employees.csv.locked" \
+    "$lab/Budget_2027.txt.locked" "$lab/READ_ME.txt"
+
+# Ta bort testkatalogen om den är tom.
+rmdir -- "$lab"
+
+printf 'Cleanup completed.\n'
+printf 'Thanks for playing. Happy Threat Hunting!\n'
